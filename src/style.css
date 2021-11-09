@@ -37,6 +37,7 @@ button {
 
 .scores-list li {
   padding: 5px 10px;
+  text-transform: capitalize;
 }
 
 .scores-list li:nth-child(even) {

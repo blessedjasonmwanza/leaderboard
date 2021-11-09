@@ -1,3 +1,5 @@
 import './style.css';
+import Scores from './leaderboard';
 
-// document.querySelector('body').innerHTML = 'welcome to the leaderboard application';
+const leaderboard = new Scores();
+leaderboard.displayScores();
