@@ -59,6 +59,14 @@ input {
   padding-left: 8px;
 }
 
+@media screen and (max-width: 720px) {
+  .recent-scores,
+  form.add-score {
+    width: 90%;
+    margin: 0 20px;
+  }
+}
+
 .d-flex {
   display: flex;
 }
