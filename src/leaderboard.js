@@ -1,7 +1,7 @@
 export default class Scores {
   constructor() {
     this.endpoint = 'https://us-central1-js-capstone-backend.cloudfunctions.net/api/games/';
-    this.id = 'Bf6jsb0iOiep8n3zEeum';
+    this.id = 'eGOybFZRVzRhxJ6bxsbj';
     this.participants = [];
   }
 
