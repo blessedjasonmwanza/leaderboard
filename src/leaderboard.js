@@ -12,11 +12,11 @@ export default class Scores {
   }
 
   async addParticipant(name, score) {
-    if(name && score && !isNaN(parse) && typeof name === 'string'){
+    if(name && score && !isNaN(score) && typeof name === 'string'){
       return await fetch(this.endpoint+this.id+'/scores/', {
         method: 'POST',
         body: JSON.stringify({
-          name: name,
+          user: name,
           score: score
         }),
         headers: {
@@ -25,17 +25,23 @@ export default class Scores {
       })
       .then((res) => res.json())
       .then((msg) => ({error: false, msg: msg}))
-      .then((error) => ({error: true, msg: 'Score could not be added.'}));
+      .catch((error) => ({error: true, msg: "Score could not be added"}));
     }else{
       return ({error: true, msg: 'Invalid name or score value'});
     }
   }
 
   displayScores() {
-    const scoresDomList = document.querySelector('.scores-list');
-    scoresDomList.innerHTML = '';
-    this.participants.forEach((participant) => {
-      scoresDomList.innerHTML += `<li>${participant.name}: ${participant.score}</li>`;
+    this.getScores()
+    .then((res) => {
+        if(!res.error){
+          this.participants = res.participants;
+          const scoresDomList = document.querySelector('.scores-list');
+          scoresDomList.innerHTML = '';
+          this.participants.forEach((participant) => {
+            scoresDomList.innerHTML += `<li>${participant.user}: ${participant.score}</li>`;
+          });
+        }
     });
   }
 }
