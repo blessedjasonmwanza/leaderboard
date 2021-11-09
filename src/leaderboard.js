@@ -14,7 +14,7 @@ export default class Scores {
   }
 
   async addParticipant(name, score) {
-    if (name && score && !Number.isNaN && typeof name === 'string') {
+    if (name && score && typeof name === 'string') {
       const response = await fetch(`${this.endpoint + this.id}/scores/`, {
         method: 'POST',
         body: JSON.stringify({
