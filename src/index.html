@@ -7,6 +7,29 @@
   <title>LeaderBoard</title>
 </head>
 <body>
-  
+  <h1>
+    Leaderboard
+  </h1>
+  <main class="d-flex row-wrap">
+    <section class="recent-scores">
+      <div class="d-flex row-wrap s-between">
+        <h2 class="no-margin">Recent Scores</h2>
+        <button type="button" class="refresh">Refresh</button>
+      </div>
+      <ul class="scores-list">
+        <li>Name : 100</li>
+        <li>Name : 20</li>
+        <li>Name : 50</li>
+        <li>Name : 125</li>
+      </ul>
+    </section>
+
+    <form action="#" method="get" class="add-score d-flex">
+      <h2 class="no-margin">Add your score</h2>
+      <input type="text" placeholder="Your name" required>
+      <input type="number" placeholder="Your score" required>
+      <button type="submit">Submit</button>
+    </form>
+  </main>
 </body>
 </html>

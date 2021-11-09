@@ -1,3 +1,3 @@
 import './style.css';
 
-document.querySelector('body').innerHTML = 'Test';
+// document.querySelector('body').innerHTML = 'welcome to the leaderboard application';
